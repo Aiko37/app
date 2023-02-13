@@ -1,0 +1,27 @@
+<div class="home">
+  <div class="main">
+    <h2>マイページ</h2>
+    <br>
+    <p>メールアドレス : <%= @user.email %></p>
+    <%= image_tag @user.image_url, size: "150x120" if @user.image? %>
+    <p>名前 : <%= @user.name %></p>
+    <p>プロフィール : <%= @user.profile %></p>
+
+    <% if current_user.id == @user.id %>
+      <%= link_to "編集する", edit_user_registration_path %>
+    <% end %>
+    
+      <!-- 以下はいいね機能を実装している場合-->
+      <h2><br>お気に入り一覧</h2>
+      <% @user.liked_posts.each do |t| %>
+        <div class="likes">
+        <%= t.user.name %>
+        <%= t.name %>
+        <%= link_to "詳細へ", post_path(t.id) %>
+        </div>
+      <% end %>
+      <!-- ここまで-->
+      <br>
+      <%= link_to "スポット一覧に戻る", posts_path %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="main">
+  <h2>ユーザーの投稿一覧</h2>
+  <% @posts.each do |t| %>
+    <%= t.user.name %>
+    <%= t.name %>
+  <% end %>
+
+  <%= link_to "スポット一覧に戻る", posts_path %>
+</div>

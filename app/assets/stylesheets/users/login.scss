@@ -1,0 +1,38 @@
+.login{
+    width: 100%;
+    height: 800px;
+    background-color: #FCF7FD;
+    padding-top: 50px;
+
+    .login_box{
+        width: 500px;
+        height: 400px;
+        background-color: #BEF5EB;
+        margin: auto;
+    
+        .title{
+            color: #0B2161;
+            padding-top: 25px;
+            margin-left: 100px;
+            margin-bottom: 10px;
+        }
+
+        .field{
+            color: #0B2161;
+            margin-left: 100px;
+            margin-bottom: 5px;
+        }
+
+        .actions{
+            color: #0B2161;
+            margin-left: 100px;
+            padding-top: 10px;
+        }
+
+        .other{
+            color: #0B2161;
+            margin-left: 100px;
+            padding-top: 30px;
+        }
+    }
+}

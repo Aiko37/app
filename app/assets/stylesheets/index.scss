@@ -1,0 +1,53 @@
+.posts-container {
+    width: 50%;
+    margin: 10px auto;
+  }
+  h3 {
+    width: 100px;
+    margin: 30px auto;
+    text-align: center;
+  }
+  .post {
+    border-top: solid #CEF6F5;
+    margin-top: 10px;
+    padding-top: 20px;
+  }
+  .main-box {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .time {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .main {
+    background-color: #FCF7FD;
+    color: #0B2161;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .home {
+    background-color: #FCF7FD;
+    color: #0B2161;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    min-height: 630px;
+  }
+  .search {
+    background-color: #FCF7FD;
+    color: #0B2161;
+    margin-left: 300px;
+    margin-right: 100px;
+  }
+  .page {
+    background-color: #FCF7FD;
+    color: #0B2161;
+
+    /*margin-left: 100px;
+    margin-right: 100px;*/
+  }
+  .page2{
+    margin-left: 300px;
+    margin-right: 100px;
+  }
