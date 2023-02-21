@@ -19,8 +19,8 @@
     margin: 0;
   }
   body {
-    font-family: 'Alice', "Slabo 27px", "メイリオ",
-      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    font-family: "Noto Serif JP", "Slabo 27px", "メイリオ",
+      Meiryo,  "ＭＳ Ｐゴシック", sans-serif;
    
   }
   header {
@@ -30,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family:  'Playball', 'Clicker Script','Libre Baskerville', 'Alice', sans-serif;
   }
   header a {
     color: #0B2161; 
@@ -60,4 +61,11 @@
     align-items: center;
     position: fixed;
     justify-content: flex-end;
+    font-family: 'Libre Baskerville';
+  }
+    number {
+    font-family: 'Lora';
+  }
+    .space{
+      margin-right: 40px;
   }

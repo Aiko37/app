@@ -1,86 +1,56 @@
 <%= stylesheet_link_tag 'index', :media => "all" %>
 
 <div class="home">
-  <div class="search">
+  <div class="home2">
     <h2>場所を検索</h2>
     <br>
     <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+    
       <%= text_field_tag :search %>
-      <%= submit_tag '検索する'  %>
+      <style>
+      #search {
+        height: 30px;
+        width: 70%;
+        font-size: 18px
+      }
+      </style>
+      <input type="submit" value="検索" class="button">
+      
 
-      <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
-        <%= text_field_tag :tag %>
-        <%= submit_tag 'タグを追加' %>
     <% end %>
-
-    <% end %>
-
+<br>
     <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
-      <% Tag.all.each do |t| %>
-          <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
-      <% end %>
-      <%= submit_tag '検索' %>
+      <%= text_field_tag :tag %>
+      <%= submit_tag 'タグを追加' %>
     <% end %>
 
+    <div class="radioArea" id="makeImg">
+      <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+        <% Tag.all.each do |t| %>
+            <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+        <% end %>
+      
+        <input type="submit" value="検索" class="button">
+      <% end %>
+    </div>
+    <br>
     <% if user_signed_in? %>
       <%= link_to "マイページへ", user_path(current_user.id) %>
-      <%= link_to "投稿一覧へ", users_path %>
+      <br><%= link_to "投稿一覧へ", users_path %>
     <% end %>
 
-    <%= link_to "新規投稿へ", new_post_path %>
-   
-  </div>
-
-  <div class="page">
-    <br>
-    <div class="page2">
-      <%= page_entries_info @posts %>
-      <br><%= paginate @posts %>
+    <br><%= link_to "新規投稿へ", new_post_path %>
     </div>
-  </div>
+  <div class="map-home">
 
-  <div class="posts-container">
-      <% @posts.each do |t| %>
-        <div class="post">
-        <%= t.user.name %><br>
-
-          <%= image_tag t.image_url, size: "250x200" if t.image? %><br>
-          <%= t.name %><br>
-          <%= t.station %><br>
-          <%= t.address %>
-          <%= t.time %><br>
-          <%= t.about %><br>
-
-          <% if user_signed_in? %>
-              <% if current_user.already_liked?(t) %>
-                  <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
-                    <i class="fas fa-heart"></i><%= t.likes.count %>
-                  <% end %>
-              <% else %>
-                  <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
-                    <i class="far fa-heart"></i><%= t.likes.count %>
-                  <% end %>
-              <% end %>
-          <% else %>
-      <i class="far fa-heart"></i><%= t.likes.count %>
-      <% end %>
-          <%= t.created_at %>
-          <%= link_to "詳細へ", post_path(t.id) %>
-        </div>
-        <%= link_to "編集する", edit_post_path(t.id) %>
-        <%= button_to "削除する", post_path(t.id), method: :delete %>
-      <% end %>
-      <br><%= paginate @posts %>
-
-      <h2><br>spot一覧</h2>
-
-
+    <h2><br>spot一覧</h2>
+<br>
       <div id='map'></div>
 
     <style>
     #map {
-      height: 600px;
-      width: 100%;
+      height: 500px;
+      width: 600px;
     }
     </style>
 
@@ -135,4 +105,51 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYUm_VavnX9kGujsE2QLXawIr5CaY3tzo&callback=initMap" async defer></script>
   </div>
+</div>
+  <div class="search">
+
+  <div class="page">
+    <br>
+      <%= page_entries_info @posts %>
+      <br><%= paginate @posts %>
+  </div>
+
+  <div class="posts-container">
+      <% @posts.each do |t| %>
+        <div class="post">
+        <%= t.user.name %><br>
+
+          <%= image_tag t.image_url, size: "250x200" if t.image? %><br>
+          <%= t.name %><br>
+          <%= t.station %><br>
+          <%= t.address %>
+          <%= t.time %><br>
+          <%= t.about %><br>
+
+          <% if user_signed_in? %>
+              <% if current_user.already_liked?(t) %>
+                  <%= link_to post_like_path(id: t.id, post_id: t.id), method: :delete do %>
+                    <i class="fas fa-heart"></i><%= t.likes.count %>
+                  <% end %>
+              <% else %>
+                  <%= link_to post_likes_path(id: t.id, post_id: t.id), method: :post do %>
+                    <i class="far fa-heart"></i><%= t.likes.count %>
+                  <% end %>
+              <% end %>
+          <% else %>
+      <i class="far fa-heart"></i><%= t.likes.count %>
+      <% end %>
+          <%= t.created_at %>
+      <br>
+          <%= link_to "詳細へ", post_path(t.id) %>
+        <%= link_to "編集する", edit_post_path(t.id) %>
+        <%= button_to "削除する", post_path(t.id), method: :delete %>
+        </div>
+        <% end %>
+        </div>
+    <div class="space2">
+      <p><%= paginate @posts %></p>
+
+  
+    </div>
 </div>

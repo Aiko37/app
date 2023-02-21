@@ -9,11 +9,14 @@
     <script src="https://kit.fontawesome.com/5ad218c75a.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all'  %>
     <%= javascript_pack_tag 'application'  %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playball&Clicker+Script&Libre+Baskerville&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header>
-    <h1>Spot Search</h1>
+    <h1><%= link_to "Spot Search", posts_path %></h1>
     <div class="header-list">
     <ul>
       <% if user_signed_in? %>
@@ -22,16 +25,21 @@
       <li><%= link_to "新規登録", new_user_registration_path %></li>
       <li><%= link_to "ログイン", new_user_session_path %></li>
       <% end %>
-      <li><%= link_to "ホーム", posts_path %></li>
-      <li><%= link_to "新規投稿",new_post_path %></li>
+      <span class="space">
+       <a class="fa-solid fa-file-pen fa-2x" href="posts/new"></a>
+      </span>
+
     </ul>
     </div>
   </header>
   <main>
+    
     <%= yield %>
     </main>
     <footer>
       <p> ©2023 Spot Search &emsp; </p>
+      <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
     </footer>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
   </body>
 </html>

@@ -1,5 +1,5 @@
 .posts-container {
-    width: 50%;
+    width: 73%;
     margin: 10px auto;
   }
   h3 {
@@ -9,6 +9,8 @@
   }
   .post {
     border-top: solid #CEF6F5;
+    margin-right:50px;
+    margin-left:50px;
     margin-top: 10px;
     padding-top: 20px;
   }
@@ -28,17 +30,19 @@
     margin-right: 100px;
   }
   .home {
+    width:100%;
     background-color: #FCF7FD;
     color: #0B2161;
     padding-top: 20px;
     padding-bottom: 40px;
     min-height: 630px;
+    display: flex;
   }
   .search {
     background-color: #FCF7FD;
     color: #0B2161;
-    margin-left: 300px;
-    margin-right: 100px;
+    text-align: center;
+    padding-bottom: 40px;
   }
   .page {
     background-color: #FCF7FD;
@@ -47,7 +51,125 @@
     /*margin-left: 100px;
     margin-right: 100px;*/
   }
-  .page2{
-    margin-left: 300px;
-    margin-right: 100px;
+  .space2 {
+    padding-top: 30px;
   }
+  .home2{
+    margin-top: 40px;
+    margin-left: 10%;
+  }
+  .map-home{
+    margin-left: 10%;
+    
+  }
+
+  .button {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 14pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 10px 15px;   /* 余白       */
+    background    : #0b2161;     /* 背景色     */
+    color         : #cef6f5;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 2px 2px 7px #666666;  /* 影の設定 */
+    /*border        : 2px solid #cef6f5;    /* 枠の指定 */
+  }
+  .button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #0b2161;     /* 背景色     */
+    background    : #cef6f5;     /* 文字色     */
+  }
+
+  .button2:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #0b2161;     /* 背景色     */
+    background    : #cef6f5;     /* 文字色     */
+  }
+
+  .radioArea input[type="checkbox"] {
+    width         : 16pt;        /* 大きさ：横 */
+    height        : 16pt;        /* 大きさ：縦 */
+    vertical-align: top;         /* 並び位置   */
+  }
+   /* --- チェックボックス直後のlabel --- */
+  .radioArea input[type="checkbox"] + label {
+    padding       : 0 4px;                      /* labelの余白 */
+    font-size     : 14pt;                       /* labelの文字サイズ */
+    font-weight   : normal;                     /* 文字太さ   */
+    border-radius : 5px;                        /* labelの角丸 */
+    cursor        : pointer;                    /* カーソル設定 */
+    transition    : .2s;                        /* なめらか変化 */
+  }
+   /* --- 選択されたチェックボックス直後のlabel --- */
+  .radioArea input[type="checkbox"]:checked + label {
+    background    : #cef6f5;
+    font-weight   : bold;        /* labelの太字 */
+  }
+   /* --- チェックボックス直後のlabelにマウスが乗った --- */
+  .radioArea input[type="checkbox"] + label:hover {
+    font-weight   : bold;        /* labelの太字 */
+  }
+
+   /* --- 検索全体のBOX (サンプル用)--- */
+.searchArea{
+  width          : 290px;              /* BOXの幅               */
+  height         : 30px;               /* BOXの高さ             */
+  margin         : auto;               /* サンプルを中心に寄せ  */
+  letter-spacing : 0.1em;              /* 文字間隔              */
+  font-weight    : bold;               /* 太字                  */
+  line-height    : 0;                  /* 標準の行高さ          */
+}
+ 
+ /* --- テキスト入力欄のSTYLE設定 --- */
+.searchArea .searchText {
+  display        : block;              /* ブロック化            */
+  float          : left;               /* 横並び                */
+  box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+  height         : 30px;               /* 入力の高さ            */
+  width          : 170px;              /* 入力の幅              */
+  margin         : 0;                  /* 外余白                */
+  padding        : 0 5px;             /* 内余白                */
+  border         : 2px solid #0b2161;  /* 枠線　幅,実践,色      */
+  border-radius  : 4px 0 0 4px;      /* 左上下の角丸          */
+  color          : #0b2161;               /* 文字色                */
+  outline        : 0;                  /* 入力の薄い枠を非表示  */
+  font-size      : 18px;               /* フォントサイズ        */
+}
+ 
+ /* --- 検索ボタン欄のSTYLE設定 --- */
+.searchArea .searchButton {
+  float          : left;               /* 横並び                */
+  box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+  height         : 30px;               /* 入力の高さ            */
+  margin         : 0;                  /* 外余白                */
+  padding        : 6px 10px;           /* 内余白                */
+  border         : none;               /* 枠線　幅,実践,色      */
+  border-radius  : 0 4px 4px 0;      /* 右上下の角丸          */
+  background     : #0b2161;            /* ボタンの色            */
+  color          : #fff;               /* 文字色                */
+  cursor         : pointer;            /* カーソル設定          */
+  line-height    : 18px;               /* 1行の高さ             */
+  font-size      : 18px;               /* フォントサイズ        */
+}
+ 
+ /* --- 検索ボタン欄にフォーカスか来たとき --- */
+.searchArea .searchText:focus {
+  background     : #cfe7ff;            /* フォーカス時の背景色  */
+}
+ 
+ /* --- 検索ボタン内のアイコンSTYLE設定 --- */
+.searchArea .searchImg {
+  display        : inline-block;       /* インラインブロック化  */
+  width          : auto;               /* 幅は高さに合わせる    */
+  height         : 18px;               /* 画像の高さ            */
+  margin         : 0 3px 0 0;          /* 余白                  */
+  vertical-align : middle;             /* 横の文字位置          */
+}
+ 
+ /* --- IEの入力エリア右側×消し -------------------------*/
+.searchArea .searchText::-ms-clear {
+  display        : none;               /* ×を消す              */
+}
